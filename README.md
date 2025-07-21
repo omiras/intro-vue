@@ -4,6 +4,8 @@ Abre con Live Server cada uno de los ficheros index.html del ejercicio a ralizar
 
 En alguno de ellos tendrás que [configurar el HTML](https://vuejs.org/guide/quick-start.html#using-the-global-build) para quea gobernado por Vue 
 
+Os adjunto un [vídeo](https://oscarm.tinytake.com/df/1791251/thumbnail?type=attachments&version_no=0&file_version_no=0&thumbnail_size=preview) con una demo de cada uno de los ejercicios.
+
 ## ¿Algo va mal?
 
 
