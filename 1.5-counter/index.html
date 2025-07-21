@@ -14,19 +14,30 @@
 </head>
 
 <body>
-  <main>
+  <main id="app">
     <div>
       <h1>Counter</h1>
-      <span class="value">0</span>
+      <span class="value">{{ counter }}</span>
       <div>
-        <button class="btn btn-danger decrease" ><i class="fa fa-minus" aria-hidden="true"></i></button>
+        <button class="btn btn-danger decrease"><i class="fa fa-minus" aria-hidden="true"></i></button>
         <button class="btn btn-secondary reset">Reset</button>
         <button class="btn btn-success increase"><i class="fa fa-plus" aria-hidden="true"></i></button>
       </div>
     </div>
   </main>
-    <!-- Aquí va VUE...pero recuerda también el contenedor id="app" -->
+  <!-- Aquí va VUE...pero recuerda también el contenedor id="app" -->
+  <script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 
+    createApp({
+      setup() {
+        const counter = ref(0)
+        return {
+          counter
+        }
+      }
+    }).mount('#app')
+  </script>
 </body>
 
 </html>
