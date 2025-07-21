@@ -18,7 +18,7 @@
             <button @click="handleMoveSelection('paper')" id="paper">&#x1f590;</button>
             <button @click="handleMoveSelection('scissors')" id="scissors">&#x270c;</button>
         </div>
-        <p id="result">You chose {{ lastPlayerMove }} and AI selected: {{ lastAIMove }}</p>
+        <p id="result">You chose <em>{{ lastPlayerMove }}</em>, and AI chose  <em> {{ lastAIMove }}</em></p>
         <p id="scores">
             Your score: <span id="user-score">{{ playerWins }}</span>
             Computer score: <span id="computer-score">{{ aiWins }} </span>
