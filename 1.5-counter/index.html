@@ -14,31 +14,19 @@
 </head>
 
 <body>
-  <main id="app">
+  <main>
     <div>
       <h1>Counter</h1>
-      <span class="value" :style="{color: getColor}">{{ value }}</span>
+      <span class="value">0</span>
       <div>
-        <button class="btn btn-danger decrease" @click="decrease"><i class="fa fa-minus" aria-hidden="true"></i></button>
-        <button class="btn btn-secondary reset" @click="reset">Reset</button>
-        <button class="btn btn-success increase" @click="increase"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        <button class="btn btn-danger decrease" ><i class="fa fa-minus" aria-hidden="true"></i></button>
+        <button class="btn btn-secondary reset">Reset</button>
+        <button class="btn btn-success increase"><i class="fa fa-plus" aria-hidden="true"></i></button>
       </div>
     </div>
   </main>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <script type="module">
-    const { createApp, ref } = Vue;
-    createApp({
-      setup() {
-        const value = ref(0);
-        const increase = () => value.value++;
-        const decrease = () => value.value--;
-        const reset = () => value.value = 0;
+    <!-- Aquí va VUE...pero recuerda también el contenedor id="app" -->
 
-        return { value, increase, decrease, reset };
-      }
-    }).mount('#app');
-  </script>
 </body>
 
 </html>

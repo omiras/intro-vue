@@ -13,51 +13,16 @@
 </head>
 
 <body>
-  <div id="app" class="password-container">
+  <div class="password-container">
     <h2>Random Password Generator</h2>
     <div class="input-container">
-      <input v-bind:value="password" type="text" id="input" class="input" placeholder="Create Password" readonly />
+      <input type="text" id="input" class="input" placeholder="Create Password" readonly />
     </div>
-    <button @click="handleBtnGenerate" class="btn">Generate</button>
+    <button class="btn">Generate</button>
   </div>
-  <script type="module">
-    import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
-    // carácteres auxiliares
-    const chars = "0123456789abcdefghijklmnopqrstuvwxtz!@#$%^&*()_+?:{}[]ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    // Método auxuliar que NO vamos a exponer al HTML
-    const generateRandomPassword = () => {
+  <!-- Aquí va VUE...pero recuerda también el contenedor id="app" -->
 
-      let password = "";
-
-      for (let i = 0; i < 8; i++) {
-        const nextChar = chars[Math.floor(Math.random() * chars.length)];
-        password += nextChar
-      }
-
-      return password;
-    }
-
-
-    createApp({
-      setup() {
-
-
-        // Paso 1: Comprobar que al cambiar las variables de estado, cambia también la UI de tu app
-        const password = ref('')
-
-        const handleBtnGenerate = () => {
-          password.value = generateRandomPassword();
-        }
-
-
-        return {
-          password,
-          handleBtnGenerate
-        }
-      }
-    }).mount('#app')
-  </script>
 </body>
 
 </html>

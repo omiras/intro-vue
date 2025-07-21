@@ -15,6 +15,7 @@ En alguno de ellos tendrás que [configurar el HTML](https://vuejs.org/guide/qui
 
 ### 1-profile-statics
 
+- Para este ejercicio hemos configurado Vue para ti. Borra el contenedor y la variable de estado que viene por defecto. En los próximos ejercicios tendrás que configurar Vue tu mismo.
 - Este ejercicio se puede hacer con _ref_ o _reactive_
 - El _quid_ de este ejercicio es que, si cambias las variables de estado, debería recalcularse toda la información que presenta la app.
 - Deberás añadir algo de HTML para mostrar el mensaje inferior
@@ -28,6 +29,7 @@ Implementa un contador.
 
 ### 2-random-password-generator
 
+- Los carácteres para generar el password seguro son 8 de entre todos estos `0123456789abcdefghijklmnopqrstuvwxtz`. Puede ser una buena idea tener una variable donde almacenar esta información
 - Para establecer el valor de un input usamos el atributo _value_
 
 ### 3-rock-paper-scissors-game

@@ -16,38 +16,40 @@
   <div id="app">
     <div class="stats-container">
       <i class="fas fa-briefcase fa-3x icon"></i>
-      <div class="counter">{{ stats.years }}</div>
+      <div class="counter">X</div>
       <h4>Years Exprerience</h4>
     </div>
     <div class="stats-container">
       <i class="fas fa-cloud fa-3x icon"></i>
-      <div class="counter">{{ stats.websites }}</div>
+      <div class="counter">Y</div>
       <h4>Websites Made</h4>
     </div>
     <div class="stats-container">
       <i class="fab fa-apple fa-3x icon"></i>
-      <div class="counter">{{ stats.apps }}</div>
+      <div class="counter">Z</div>
       <h4>Apps Made</h4>
     </div>
     <div class="class-container">
-      <p>I started working in <strong>{{ new Date().getFullYear() - stats.years  }} </strong> and I made <strong> {{ stats.websites + stats.apps }} </strong> projects in total.</p>
+      <p>I started working in <strong></strong> and I made <strong> </strong> projects in total.</p>
     </div>
+    <!-- Borrame, estoy solo de prueba -->
+    <div style="color: red" class="class-container">
+      {{message}}
+    </div>
+    <!-- -->
   </div>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
   <script>
-    const { createApp, reactive } = Vue
+    const { createApp, ref } = Vue
 
     createApp({
       setup() {
-        const stats = reactive({
-          years: 15,
-          websites: 260,
-          apps: 27
-        })
+        const message = "Borrame, yo no debería estar aquí"
+
         return {
-          stats
+          message
         }
       }
     }).mount('#app')
