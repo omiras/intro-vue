@@ -16,26 +16,24 @@
   <div id="app">
     <div class="stats-container">
       <i class="fas fa-briefcase fa-3x icon"></i>
-      <div class="counter">X</div>
+      <div class="counter">{{ years}}</div>
       <h4>Years Exprerience</h4>
     </div>
     <div class="stats-container">
       <i class="fas fa-cloud fa-3x icon"></i>
-      <div class="counter">Y</div>
+      <div class="counter">{{ websites }}</div>
       <h4>Websites Made</h4>
     </div>
     <div class="stats-container">
       <i class="fab fa-apple fa-3x icon"></i>
-      <div class="counter">Z</div>
+      <div class="counter">{{ apps }}</div>
       <h4>Apps Made</h4>
     </div>
     <div class="class-container">
-      <p>I started working in <strong></strong> and I made <strong> </strong> projects in total.</p>
+      <!-- En la notación mostacho {{ }} podemos hacer cálculos con las variables de estado de las que disponemos -->
+      <p>I started working in <strong>{{ new Date().getFullYear() - years }}</strong> and I made <strong> {{ websites + apps }} </strong> projects in total.</p>
     </div>
-    <!-- Borrame, estoy solo de prueba -->
-    <div style="color: red" class="class-container">
-      {{message}}
-    </div>
+    
     <!-- -->
   </div>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -46,10 +44,19 @@
 
     createApp({
       setup() {
-        const message = ref("Borrame, yo no debería estar aquí")
         
+        /** Aquí declaramos las variables de estado y reactivas */
+        const years = ref(12)
+        const websites = ref(279)
+        const apps = ref(21)
+
+        // NO CREAR VARIABLES NUEVAS..no es necesario
+
+
         return {
-          message
+          years,
+          websites,
+          apps
         }
       }
     }).mount('#app')
