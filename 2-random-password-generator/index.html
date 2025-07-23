@@ -13,16 +13,39 @@
 </head>
 
 <body>
-  <div class="password-container">
-    <h2>Random Password Generator</h2>
+  <div id="app" class="password-container">
+    <h2>Random Password Generator </h2>
     <div class="input-container">
-      <input type="text" id="input" class="input" placeholder="Create Password" readonly />
+      <input type="text" id="input" class="input" placeholder="Create Password" readonly v-bind:value="password" />
     </div>
-    <button class="btn">Generate</button>
+    <button @click="generatePassword" class="btn">Generate</button>
   </div>
 
   <!-- Aquí va VUE...pero recuerda también el contenedor id="app" -->
+  <script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+   
+    // Varaibles auxiliares y que no son reactivas, se ponen fuera del setup()
+    const chars = "0123456789abcdefghijklmnopqrstuvwxtz!@#$%^&*()_+?:{}[]ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+    createApp({
+      setup() {
+
+        // Variable de estado
+        const password = ref('') // estado inicial de la variable
+
+        const generatePassword = ()=> {
+          /**  Necesito obtener 8 veces un carácter al azar de la variable chars. */
+          password.value = get8DigitPassword
+        }
+
+        return {
+          generatePassword,
+          password
+        }
+      }
+    }).mount('#app')
+  </script>
 </body>
 
 </html>
